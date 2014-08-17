@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Xplore</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyD1ecosY9hq72hkcIlg31z7Uhm5KYRq49o&sensor=true" %>
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+<%= yield %>
+
+
+
+
+
+<footer>
+	
+
+	<div class='col-md-4'>
+      <%= render :partial => "/shared/nav_login"  %>
+  </div>
+</footer>
+
+</body>
+</html>
