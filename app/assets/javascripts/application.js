@@ -17,8 +17,8 @@
 //= require_tree .
 
 var markersArray = [];
-var SF_LAT = 37.7435841;
-var SF_LNG = -122.4897851;
+var SD_LAT = -33.8698426;
+var SD_LNG = 151.2061608;
 var QUERY_DELAY = 400;
 var inactive = false;
 
@@ -33,8 +33,8 @@ $(document).ready(function() {
 var initialize = function() {
   // Define some options for the map
   var mapOptions = {
-    center: new google.maps.LatLng(SF_LAT, SF_LNG),
-    zoom: 12,
+    center: new google.maps.LatLng(SD_LAT, SD_LNG),
+    zoom: 14,
 
     // hide controls
     panControl: false,
@@ -136,7 +136,7 @@ var capture = function(i, map, business) {
  */
 var build_results_container = function(business) {
   return [
-    '<div class="result">',
+    '<div class="result" id="result">',
       '<img class="biz_img" src="', business['image_url'], '">',
       '<h5><a href="', business['url'] ,'" target="_blank">', business['name'], '</a></h5>',
       '<img src="', business['rating_img_url'], '">',
@@ -145,6 +145,8 @@ var build_results_container = function(business) {
     '</div>'
   ].join('');
 };
+
+
 
 /**
  * Geocode the address from the business and drop a marker on it's
@@ -178,6 +180,19 @@ var geocode_address = function(map, name, location_object) {
 
       // save the marker object so we can delete it later
       markersArray.push(marker);
+
+    marker.set('result', document.getElementById('result'))
+
+    var infowindow = new google.maps.InfoWindow();
+    var openContentWindow = function() {
+    var marker = this;
+  // set the content to whatever's attached to the marker
+    infowindow.setContent(marker.get('result'));
+    infowindow.open(map, marker);
+}
+
+  google.maps.event.addListener(marker, 'click', openContentWindow);
+
     } else {
       console.log("Geocode was not successful for the following reason: " + status);
     }
@@ -195,3 +210,6 @@ var clearMarkers = function() {
 
   markersArray = [];
 };
+
+
+
