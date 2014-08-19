@@ -1,0 +1,34 @@
+<h1> Xplore Photo Feed </h1>
+
+
+
+
+  <% @photos.reverse.each do |photo| %>
+
+
+  
+
+        <% if photo.user.present? %>
+          <li>User: <%= link_to(photo.user.username, photo_path(photo)) %> </li>
+
+        <% else %>
+             <li>: <%= photo.user %> </li>
+          <% end %>   
+          <li><%= image_tag(photo.user.avatar_url, :class => 'thumb') if photo.user   %></li>
+          <h3> PHOTO </h3>
+
+          <li><%= image_tag(photo.image_url, :class => 'thumb') if photo.user   %></li>
+          <!--  -->               
+    
+      <% if photo.user == @current_user %>
+     <%= link_to'Delete', photo , :class => 'delete',:method => :delete, :confirm => "Are you sure you want to delete this Post?" %>
+      <% else %>
+
+     <% end %>
+
+    
+
+<hr>
+   	
+
+   <% end %>

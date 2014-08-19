@@ -1,0 +1,34 @@
+<h1>Xplore Profile</h1>
+
+<ul>
+   <% @users.each do |user| %>
+
+ 
+
+<div id="userfont">
+   	<p>Profile : <%= link_to(user.username, user) %>
+   	  <%= image_tag(user.avatar, :class => 'thumb')  %>
+    </p>
+
+  <%= link_to "Xplore feed  |", photos_path %>
+   
+<% if user == @current_user %>
+    <%= link_to('Add New Photo |', new_photo_path) %>
+  
+  
+
+  
+    <%= link_to('Edit |', edit_user_path(user)) %> 
+    
+	 <%= link_to('Delete', user, :data => {:method => :delete, :confirm => 'Are You Sure to Delete the Whole Profile' }) %> 
+   <% end %>
+</div>
+
+  <hr>
+
+   	
+    
+   	
+
+
+   <% end %>

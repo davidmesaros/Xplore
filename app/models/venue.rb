@@ -11,7 +11,7 @@
 #
 
 class Venue < ActiveRecord::Base
-  
-  belongs_to :users
+  has_many :photos
+  belongs_to :user
   
 end

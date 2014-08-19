@@ -1,0 +1,14 @@
+ <%= form_for @photo do |f| %>
+    
+    
+      <p>Xplore Name: <%= @current_user.username  %> </p>
+  
+    	
+    	<%= f.label :UploadPhoto %>
+    	<%= f.file_field :image %>
+      <%= f.hidden_field :image_cache, :class => 'thumb' %>
+    
+
+    <%= f.submit %>
+
+    <% end %>

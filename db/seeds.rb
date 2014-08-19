@@ -9,5 +9,5 @@
 User.destroy_all
 
 
-User.create(:username => 'Joan Miro', :email => 'foo@bar.com', :avatar => 'http://upload.wikimedia.org/wikipedia/commons/5/5c/Portrait_of_Joan_Miro%2C_Barcelona_1935_June_13.jpg', :password =>'frances', :password_confirmation =>'frances')
+User.create(:username => 'Joan Miro', :avatar => 'http://upload.wikimedia.org/wikipedia/commons/5/5c/Portrait_of_Joan_Miro%2C_Barcelona_1935_June_13.jpg', :password =>'frances', :password_confirmation =>'frances')
 

@@ -4,12 +4,13 @@ Rails.application.routes.draw do
  resources :venue
  resources :photos
 
+ post '/search' => 'home#search'
  
  get '/login' =>	'session#new'
  post '/login' => 'session#create'
- 
+ delete '/login' => 'session#destroy'
 
   # root 'home#index'
-  post '/search' => 'home#search'
+  # post '/search' => 'home#search'
 
 end

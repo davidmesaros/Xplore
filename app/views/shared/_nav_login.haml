@@ -1,7 +1,9 @@
 - if @current_user 
-	%h4= Hi @current_user.username.upcase
-	%p= link_to 'View Profile', user_path(@current_user)
-	%p= link_to 'Log Out', login_path, login_path, :data => {:method => :delete, :confirm => 'Really logout?' }
+	%p
+	%p= link_to "#{@current_user.username.upcase}", user_path(@current_user)
+	= link_to 'Upload Photo ', new_photo_path(@current_user) 
+	=link_to 'Xplore Feed ', photos_path 
+	= link_to 'Log Out', '/login', :data => {:method => :delete, :confirm => 'Really logout?' }
 - else
 	%h4 LOG IN
 	= form_tag '/login' do
@@ -12,6 +14,6 @@
 		= label_tag 'password'
 		= password_field_tag 'password'
 		%p
-		= submit_tag 'Login', :id => 'login_form_button'
+		= submit_tag 'Login', :id => 'userfont'
 		= link_to 'Sign Up', new_user_path
 

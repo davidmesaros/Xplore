@@ -1,7 +1,30 @@
+<h3>USER DETAILS!</h3>
 <h1><%= @user.username %></h1>
-<ul>
-    <li><%= image_tag(@user.avatar, :class => 'thumb') %></li>
+
+<p>
+    <%= image_tag(@user.avatar, :class => 'thumb') %>
+</p>
   
+<hr>
+
+  <div class="To UpLoad photo">
+
+  <% @user.photos.each do |photo| %>
+  
+       <p><%= link_to(image_tag(photo.image_url, :class => 'thumb'), photo) %></p>
+  
+   <% end %>
+   <hr>
+   <%= link_to "Xplore feed", photos_path %>
+   <% if @current_user == @user %>
+   <%= link_to'Delete Profile |', @user, :data => {:method => :delete, :confirm => 'Really delete the Whole Profile?' } %>
+   <%= link_to'Edit Profile |', edit_user_path %>
+   <%= link_to('Add a Photo |', new_photo_path) %>
+   <%= link_to('Check out other Xplore Profile |',users_path) %>
+   <p><%= link_to('Back to search', root_path) %></p>
+    <% end %>    
+  </div>
+     
 <hr>
   
 
