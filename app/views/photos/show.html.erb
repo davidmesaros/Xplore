@@ -9,7 +9,7 @@
 <% if @photo.user == @current_user %>
 
 		<%= link_to'Edit photo |', edit_photo_path %>
-		<%= link_to'Delete photo |', @photo, :method => :delete, :confirm => "Are you sure you want to delete this Post?" %>
+		<%= link_to'Delete photo |', @photo, :data => {:method => :delete, :confirm => 'Really delete this PHOto?' } %>
 
 		<%= link_to(' Add Photo', new_photo_path) %>
 	<% end %>

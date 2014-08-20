@@ -12,7 +12,9 @@ class HomeController < ApplicationController
   end
 
   def search
-    parameters = { term: params[:term], limit: 16 }
+  	# Search term (e.g. "food", "restaurants"). If term isn't included we search everything.
+    parameters = { term: params[:term]} #,limit: 20 
     render json: Yelp.client.search('Sydney', parameters)
   end
+
 end

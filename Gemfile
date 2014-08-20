@@ -24,6 +24,12 @@ gem 'carrierwave'
 gem 'mini_magick'
 #cloud storage
 #gem 'cloudinary'
+
+gem 'underscore-rails'
+
+gem 'dotenv-rails', :groups => [:development, :test]
+
+
 # See https://github.com/sstephenson/execjs#readme for more supported runtimes
 # gem 'therubyracer',  platforms: :ruby
 
