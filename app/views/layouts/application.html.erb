@@ -6,6 +6,8 @@
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=#{ENV['GOOGLE_MAPS']}&sensor=true" %>
   <%= csrf_meta_tags %>
+  <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800" %>
+   <%= stylesheet_link_tag "http://fonts.googleapis.com/css?family=Josefin+Slab:100,300,400,600,700,100italic,300italic,400italic,600italic,700italic" %>
 </head>
 <body>
 
@@ -17,10 +19,9 @@
 
 <footer>
 	
+   
 
-	 <div class='col-md-4'>
-      <%= render :partial => "/shared/nav_login"  %>
-  </div>
+	
 </footer>
 
 </body>

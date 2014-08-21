@@ -1,28 +1,30 @@
-<div class='user-form'>
+<div class='form-horizontal'>
+  <div class='.form-group'>
 
-  <%= form_for @user do |f| %>
-    <p>
-      <%= f.label :username %>
-      <%= f.text_field :username, :autofocus => true %>
-    </p>
-    <p>
-    	<%= f.label :avatar %>
-    	<%= f.file_field :avatar %>
-      <%= f.hidden_field :avatar_cache, :class => "css_avatar" %>
-    </p>
+    <%= form_for @user do |f| %>
+      <p>
+        <%= f.label :username %>
+        <%= f.text_field :username, :autofocus => true %>
+      </p>
+      <p>
+      	<%= f.label :avatar %>
+      	<%= f.file_field :avatar %>
+        <%= f.hidden_field :avatar_cache, :class => "css_avatar" %>
+      </p>
 
-    <p>
-      <%= f.label :password %>
-      <%= f.password_field :password %>
-    </p>
-    <p>
-      <%= f.label :password_confirmation %>
-      <%= f.password_field :password_confirmation %>
-    </p>
+      <p>
+        <%= f.label :password %>
+        <%= f.password_field :password %>
+      </p>
+      <p>
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation %>
+      </p>
 
-    <%= f.button 'Update!' %>
-    <hr>
-  <% end %>
+      <%= f.button 'Update!' %>
+      <hr>
+    <% end %>
+</div>
 
 </div>
 

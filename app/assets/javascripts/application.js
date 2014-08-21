@@ -17,7 +17,7 @@
 //= require_tree .
 
 var markersArray = [];
-var SD_LAT = -33.869842;
+var SD_LAT = -33.873651;
 var SD_LNG = 151.2061608;
 var QUERY_DELAY = 400;
 // var inactive = false;
@@ -62,6 +62,7 @@ var initialize = function() {
  *
  * param: map - the Google map object
  */
+
 var bind_controls = function(map) {
   // get the container for the search control and bind and event to it on submit
   var controlContainer = $('#control_container')[0];
@@ -69,6 +70,8 @@ var bind_controls = function(map) {
     e.preventDefault();
     search(map);
   });
+
+
 
   // get the search button and bind a click event to it for searching
   var searchButton = $('#map_search_submit')[0];
@@ -80,6 +83,19 @@ var bind_controls = function(map) {
 
   // push the search controls onto the map//Custom controls
   map.controls[google.maps.ControlPosition.TOP_LEFT].push(controlContainer);
+
+  
+  var loginContainer = $('#login_container')[0];
+  google.maps.event.addDomListener(loginContainer,'submit',function(e){
+    // e.preventDefault();
+  });
+
+ var login = $('#login_submit')[0];
+  google.maps.event.addDomListener(login,'click',function(e){
+    // e.preventDefault();
+  });
+
+  map.controls[google.maps.ControlPosition.LEFT_BOTTOM].push(loginContainer);
 
 }
 

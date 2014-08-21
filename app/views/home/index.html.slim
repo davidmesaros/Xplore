@@ -6,9 +6,17 @@
       input type='text'
       a#map_search_submit href='#': span.glyphicon.glyphicon-search
      
-
+	/ # = render :partial => "/shared/nav_login"
   .attribution
     p powered by Yelp
     p.burst= image_tag 'burst_tiny.png'
 
   #results
+
+#login_container
+	form
+		#login_submit
+	 		/ = submit_tag 'Login'
+    = render :partial => "/shared/nav_login"
+
+

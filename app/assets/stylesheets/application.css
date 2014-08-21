@@ -31,18 +31,43 @@ html, body {
   padding: 0;
 }
 
+body {
+    font-family: "Open Sans","Helvetica Neue",Helvetica,Arial,sans-serif;
+    background: url(/assets/bg.png) no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    background-size: cover;
+    -o-background-size: cover;
+}
+
 #map_canvas {
   height: 100%;
   width: 100%;
 }
 
-#login{
-  z-index: 99;
+#login_container{
+  margin: 30px;
+  margin-left: 80px;
+  margin-bottom: 15px;
+   box-shadow: 2px 2px 3px #999;
+  -moz-box-shadow: 2px 2px 3px #999;
+  -webkit-box-shadow: 2px 2px 3px #999;
+
   
+}
+
+#login_container form {
+  padding-right: 10px;
 }
 
 #control_container {
   margin: 20px;
+
+}
+
+#login_submit{
+  padding-right: 30px;
+
 }
 
 #map_search {
@@ -51,14 +76,14 @@ html, body {
   -webkit-box-shadow: 2px 2px 3px #999;
 }
 
-#map_search input[type=text] {
+#map_search input[type=text]{
   border: 1px solid #fff;
   padding-left: 7px;
   height: 29px;
   width: 455px;
 }
 
-#map_search input[type=text]:focus {
+#map_search input[type=text]:focus  {
   outline: none;
 
   border: 1px solid #c41200;
@@ -172,4 +197,20 @@ html, body {
   border-radius: 10px;
 
 }
+.nav{
+  text-align: center;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 5px;
+  padding: 20px;
+ 
+
+}
+
+.userlogin{
+  border-radius: 90%; 
+  width:50px;
+  height:50px;
+}
+
+
 
