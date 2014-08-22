@@ -1,34 +1,71 @@
-<h1> Xplore Photo Feed </h1>
+<div class ="navbar navbar-fixed-top">
+    <div class ="navbar-inner">
+      <div class ="container">
+        <div class = "nav">
+          <h1> Xplore Photo Feed </h1>
+        </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+        <div class="row">
+            <div class="box">
+               <div class="col-lg-12 text-center">
+                  <div class="img-responsive img-border img-full">
 
 
 
-
-  <% @photos.reverse.each do |photo| %>
+            <% @photos.reverse.each do |photo| %>
 
 
   
+              <div class='font2'
+                  <% if photo.user.present? %>
+                     <%= link_to(photo.user.username, photo_path(photo)) %> </li>
 
-        <% if photo.user.present? %>
-          <li>User: <%= link_to(photo.user.username, photo_path(photo)) %> </li>
-
-        <% else %>
-             <li>: <%= photo.user %> </li>
-          <% end %>   
-          <li><%= image_tag(photo.user.avatar_url, :class => 'thumb') if photo.user   %></li>
-          <h3> PHOTO </h3>
-
-          <li><%= image_tag(photo.image_url, :class => 'thumb') if photo.user   %></li>
-          <!--  -->               
+                  <% else %>
+                    <%= photo.user %>
+                <% end %>  
+              </div> 
+                  
+              <div class='thumb2'>
+                  <p><%= image_tag(photo.user.avatar_url, :class => 'thumb') if photo.user %>
+                  </p>
+              </div>
+                  <br>
+                  <p><%= image_tag(photo.image_url, :class => 'xthumb') if photo.user   %></p>
+                       
     
-      <% if photo.user == @current_user %>
-     <%= link_to'Delete', photo , :data => {:method => :delete, :confirm => 'Really delete the Whole Post?' } %>
-      <% else %>
+                <% if photo.user == @current_user %>
+                  <%= link_to'Delete', photo , :data => {:method => :delete, :confirm => 'Really delete the Whole Post?' } %>
+                  
 
-     <% end %>
+                <% end %>
 
-    
+                <hr>
+           <footer>
+   <div class ="navbar navbar-fixed-bottom">
+    <div class ="navbar-inner">
+      <div class ="container">
+        <div class = "nav1" >   
 
-<hr>
-   	
 
-   <% end %>
+             
+
+                  <%= link_to(' Add  A New Photo |', new_photo_path) %>
+                  <%= link_to'Delete photo |', @photo, :data => {:method => :delete, :confirm => 'Really delete this PHOto?' } %>
+
+                  <p><%= link_to('Back to search', root_path) %></p>
+            </div>      
+        </div>
+      </div>   
+    </div>
+  </footer>    
+   
+               	
+
+            <% end %>
+
+

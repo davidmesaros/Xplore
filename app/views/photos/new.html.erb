@@ -1,3 +1,13 @@
-<h1>Add a PHoto!</h1>
-
-<%= render :partial => 'form' %>
+<div class ="navbar navbar-fixed-top">
+    <div class ="navbar-inner">
+      <div class ="container">
+        <div class = "nav">
+		      <h2>Add a PHoto! <%= image_tag(@photo.user.avatar_url, :class => 'thumb') if @photo.user %></h2>
+	     	</div>
+	  	</div>
+	  </div>
+	</div>
+	
+		<%= render :partial => 'form' %>
+		
+	

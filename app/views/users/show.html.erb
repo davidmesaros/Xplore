@@ -2,43 +2,54 @@
     <div class ="navbar-inner">
       <div class ="container">
         <div class = "nav">
-          
-          <h1>Hello! <%= @user.username %></h1>
+            
+          <h1>Hello! <%= @user.username %>
+          <%= image_tag(@user.avatar, :class => 'userlogin') %></h1>
         </div>
     </div>
   </div>
 </div>
 
+<div class="container">
 
-<p>
-    <%= image_tag(@user.avatar, :class => 'thumb') %>
-</p>
-  
-<hr>
+        <div class="row">
+            <div class="box">
+               <div class="col-lg-12 text-center">
+                  <div class="img-responsive img-border img-full">
 
-  
+                      <% @user.photos.each do |photo| %>
+                  
+                       <p><%= link_to(image_tag(photo.image_url, :class => 'xthumb'), photo) %></p>
 
-  <% @user.photos.each do |photo| %>
-  
-       <p><%= link_to(image_tag(photo.image_url, :class => 'thumb'), photo) %></p>
-  
-   <% end %>
-   <hr>
-   
+                       <hr>
+                  
+                   <% end %>
+                </div>
+             </div>
+          </div>
+      </div>
+
+
+
 
    <footer>
    <div class ="navbar navbar-fixed-bottom">
     <div class ="navbar-inner">
       <div class ="container">
         <div class = "nav">
-   <%= link_to "Xplore feed | ", photos_path %>
-   <% if @current_user == @user %>
-   <%= link_to'Delete Profile |', @user, :data => {:method => :delete, :confirm => 'Really delete the Whole Profile?' } %>
-   <%= link_to'Edit Profile |', edit_user_path %>
-   <%= link_to('Add a Photo |', new_photo_path) %>
-   <%= link_to('Check out other Xplore Profile ',users_path) %>
-   <p><%= link_to('Back to search', root_path) %></p>
-    <% end %> 
+         <%= link_to "Xplore feed | ", photos_path %>
+           
+           <% if @current_user == @user %>
+              <%= link_to'Delete Profile |', @user, :data => {:method => :delete, :confirm => 'Really delete the Whole Profile?' } %>
+              <%= link_to'Edit Profile |', edit_user_path %>
+              <%= link_to('Add a Photo |', new_photo_path) %>
+              <%= link_to('Check out other Xplorer Profile ',users_path) %>
+              <p><%= link_to('Back to search', root_path) %></p>
+
+          <% else %>
+            <%= link_to('Back to search', root_path) %>
+          <% end %> 
+        
         </div>      
       </div>
     </div>   

@@ -1,34 +1,56 @@
-<h1>Xplore Profile</h1>
 
-<ul>
-   <% @users.each do |user| %>
-
- 
-
-<div id="userfont">
-   	<p>Profile : <%= link_to(user.username, user) %>
-   	  <%= image_tag(user.avatar, :class => 'thumb')  %>
-    </p>
-
-  <%= link_to "Xplore feed  |", photos_path %>
-   
-<% if user == @current_user %>
-    <%= link_to('Add New Photo |', new_photo_path) %>
-  
-  
-
-  
-    <%= link_to('Edit |', edit_user_path(user)) %> 
-    
-	 <%= link_to('Delete', user, :data => {:method => :delete, :confirm => 'Are You Sure to Delete the Whole Profile' }) %> 
-   <% end %>
+<div class ="navbar navbar-fixed-top">
+    <div class ="navbar-inner">
+      <div class ="container">
+        <div class = "nav">
+          <h1>Xplorer's
+          </h1>
+         </div>
+    </div>
+  </div>
 </div>
 
-  <hr>
 
+<div class="container">
+
+        <div class="row">
+            <div class="box">
+               <div class="col-lg-12 text-center">
+                  <div class="img-responsive img-border img-full">
+
+          <% @users.each do |user| %>
+           
+                  <div class="font">
+                    <%= link_to(user.username, user) %>
+                  </div>
+
+
+             	   <p> <%= image_tag(user.avatar, :class => 'xthumb')  %>
+                </p>
+                <hr>
+  
+  <footer>
+   <div class ="navbar navbar-fixed-bottom">
+    <div class ="navbar-inner">
+      <div class ="container">
+        <div class = "nav1">
+   
+          <% if user == @current_user %>
+              <%= link_to('Add a Photo |', new_photo_path) %>
+              <%= link_to('Edit Profile |', edit_user_path(user)) %> 
+              <%= link_to('Delete |', user, :data => {:method => :delete, :confirm => 'Are You Sure to Delete the Whole Profile' }) %> 
+              <p><%= link_to('Back to search', root_path) %></p>
+          <% end %>
+      
+          </div>      
+        </div>
+      </div>   
+    </div>
+  </footer>
+<% end %>
    	
     
    	
 
 
-   <% end %>
+   
