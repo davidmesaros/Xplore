@@ -22,20 +22,20 @@
 #   end
 
 
-require 'rails_helper'
+ require 'rails_helper'
 
-RSpec.describe User, :type => :model do
+# RSpec.describe User, :type => :model do
 
  
-  describe 'user' do
-    # -- existence & uniqueness
-    it 'should have an username' do
-      user = FactoryGirl.create(:user)
-      user = user
-      expect(user.username).to eq username
-    end
-  end
-end
+#   describe 'user' do
+#     # -- existence & uniqueness
+#     it 'should have an username' do
+#       username = FactoryGirl.create(:user)
+#       # user = user
+#       expect(user.username).to eq username
+#     end
+#   end
+# end
 
 
 
@@ -47,22 +47,29 @@ end
 #     expect(create(:user)).to be_valid
 #   end
 
-#   # it "is invalid without name" do
-#   #   expect(build(:author, name: nil)).to \
-#   #   have(1).errors_on(:name)
-#   # end
+  # it "is invalid without name" do
+  #   expect(build(:author, name: nil)).to \
+  #   have(1).errors_on(:name)
+  # end
 
-#   # it "is invalid without email" do
-#   #   expect(build(:author, email: nil)).to \
-#   #   have(1).errors_on(:email)
-#   # end
+  # it "is invalid without email" do
+  #   expect(build(:author, email: nil)).to \
+  #   have(1).errors_on(:email)
+  # end
 
-#   # it "is invalid without password" do
-#   #   expect(build(:author, password: nil)).to \
-#   #   have(1).errors_on(:password)
-#   # end
+  # it "is invalid without password" do
+  #   expect(build(:author, password: nil)).to \
+  #   have(1).errors_on(:password)
+  # end
 
-#   it { should have_many (:photos)}
+  # it { should have_many (:photos)}
 
 # end
+
+describe "signup page" do
+    before { visit signup_path }
+
+    it { should have_content('Sign up') }
+    it { should have_title(full_title('Sign up')) }
+  end
 

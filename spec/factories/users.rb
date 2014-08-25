@@ -13,8 +13,8 @@
 
 FactoryGirl.define do
   factory :user do
-    username  "Example Example"
-    avatar 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgN-yvPVTyqCxqGdBQd9dt95q7eR8flDszd0HHkq8RcSx2qqLp'
+    username "davidmesaros"
+    avatar "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRgN-yvPVTyqCxqGdBQd9dt95q7eR8flDszd0HHkq8RcSx2qqLp.jpg"
     password    "foobar1234"
     password_confirmation "foobar1234"
   end

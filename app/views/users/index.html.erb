@@ -35,12 +35,12 @@
       <div class ="container">
         <div class = "nav1">
    
-          <% if user == @current_user %>
-              <%= link_to('Add a Photo |', new_photo_path) %>
-              <%= link_to('Edit Profile |', edit_user_path(user)) %> 
-              <%= link_to('Delete |', user, :data => {:method => :delete, :confirm => 'Are You Sure to Delete the Whole Profile' }) %> 
+          
+              <%= link_to('Add a New PHoto! |', new_photo_path) %>
+              <%= link_to('Edit your Profile |', edit_user_path(user)) %> 
+              <%= link_to('Delete your Profile |', user, :data => {:method => :delete, :confirm => 'Are You Sure to Delete the Whole Profile' }) %> 
               <p><%= link_to('Back to search', root_path) %></p>
-          <% end %>
+         
       
           </div>      
         </div>
