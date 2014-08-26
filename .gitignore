@@ -17,3 +17,5 @@
 
 # Ingnore .gitignore
 .env
+
+/public/uploads

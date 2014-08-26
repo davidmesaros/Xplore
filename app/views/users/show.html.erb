@@ -18,14 +18,19 @@
                   <div class="img-responsive img-border img-full">
                     
                       <% @user.photos.each do |photo| %>
-                      
+                      <% if @user.photos.empty? %>
+                          <h2> No PHoto, Add a new Photo of the venue you attended </h2>
+                      <% else %>
+
                        <p><%= link_to(image_tag(photo.image_url, :class => 'xthumb'), photo) %>
                        </p>
+                       <% end %>
 
                        <hr>
 
                   
                    <% end %>
+
                    <h2> No PHoto, Add a new Photo of the venue you attended </h2>
                 </div>
              </div>
