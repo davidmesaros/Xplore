@@ -19,7 +19,7 @@ gem 'yelp', require: 'yelp'
 
 gem 'slim'
 
-gem 'carrierwave'
+gem 'carrierwave' # upload Avatar..
 
 gem 'simple_form'
 
