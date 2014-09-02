@@ -1,0 +1,19 @@
+---
+development:
+  cloud_name: davidmesaros
+  api_key: '814562171466317'
+  api_secret: ZifzuSM5DxevlnZzdEZPA1E0ogQ
+  enhance_image_tag: true
+  static_image_support: false
+production:
+  cloud_name: davidmesaros
+  api_key: '814562171466317'
+  api_secret: ZifzuSM5DxevlnZzdEZPA1E0ogQ
+  enhance_image_tag: true
+  static_image_support: true
+test:
+  cloud_name: davidmesaros
+  api_key: '814562171466317'
+  api_secret: ZifzuSM5DxevlnZzdEZPA1E0ogQ
+  enhance_image_tag: true
+  static_image_support: false
