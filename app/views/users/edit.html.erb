@@ -24,9 +24,9 @@
 			  
 			   
 			      <% if @current_user == @user %>
-			   <%= link_to'Delete Profile |', @user, :data => {:method => :delete, :confirm => 'Really delete the Whole Profile?' } %>
-			   <%= link_to('Check out other Xplorer Profile ',users_path) %>
-			   <p><%= link_to('Back to search', root_path) %></p>
+			         <%= link_to'Delete Profile |', @user, :data => {:method => :delete, :confirm => 'Really delete the Whole Profile?' } %>
+			         <%= link_to('Check out other Xplorer Profile ',users_path) %>
+			         <p><%= link_to('Back to search', root_path) %></p>
 			    <% else %>
 
 			   <%= link_to('Back to search', root_path) %>

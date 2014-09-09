@@ -10,10 +10,11 @@
             <div class="box">
 
 
-                   <%= form_for @photo do |f| %>
+                   <%= form_for @photo, :url => { :action => "create" } do |f| %>
                       <p class="nav nav-pills ">Xplore Name: <%= @current_user.username  %> </p>
                       <br>
                       <p >
+                      <p class="nav nav-pills ">Venue: <%= f.text_field :venue_photo %></p>
                       <%= f.label :UploadPhoto %>
                       <%= f.file_field :image, :class => 'btn btn-primary' %>
                       <%= f.hidden_field :image_cache, :class => 'thumb' %>
